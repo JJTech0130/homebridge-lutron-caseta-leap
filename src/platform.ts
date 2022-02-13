@@ -25,6 +25,8 @@ interface BridgeAuthEntry {
     ca: string;
     key: string;
     cert: string;
+    username: string;
+    password: string;
 }
 
 export class LutronCasetaLeap
@@ -88,6 +90,8 @@ export class LutronCasetaLeap
                 ca: entry.ca,
                 key: entry.key,
                 cert: entry.cert,
+                username: entry.username,
+                password: entry.username,
             });
         }
         return out;
@@ -137,6 +141,7 @@ export class LutronCasetaLeap
     // ----- CUSTOM METHODS
 
     private handleBridgeDiscovery(bridge: SmartBridge) {
+        this.log.info('jjtech was here and discovered a bridge');
         if (this.bridgeMgr.hasBridge(bridge.bridgeID)) {
             // we've already discovered this bridge, move along
             this.log.info('Bridge', bridge.bridgeID, 'already known, closing.');

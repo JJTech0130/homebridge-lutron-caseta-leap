@@ -19,9 +19,11 @@
                     "bridgeid": { "type": "string" },
                     "ca": { "type": "string" },
                     "key": { "type": "string" },
-                    "cert": { "type": "string" }
+                    "cert": { "type": "string" },
+                    "username": { "type": "string" },
+                    "password": { "type": "string" }
                 },
-                "required": ["ca", "cert", "key"]
+                "required": []
             }
         }
     }
@@ -40,6 +42,20 @@
                   "notitle": false,
                   "title": "Bridge ID Number (hex of serial number)",
                   "placeholder": "Bridge ID",
+                  "type": "string"
+              },
+              {
+                  "key": "secrets[].username",
+                  "flex": "1 1 50px",
+                  "title": "Username",
+                  "placeholder": "Username",
+                  "type": "string"
+              },
+              {
+                  "key": "secrets[].password",
+                  "flex": "1 1 50px",
+                  "title": "Password",
+                  "placeholder": "Password",
                   "type": "string"
               },
               {
